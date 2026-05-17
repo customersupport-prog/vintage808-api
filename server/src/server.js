@@ -29,19 +29,18 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') });
 connectDB().then(() => seedAdmin());
 
 // ── Middleware ────────────────────────────────────────────────
-app.use(cors({
- origin: [
-  'http://localhost:5500',   // Live Server default
-  'http://127.0.0.1:5500',
-  'http://localhost:5501',   // Live Server (second tab)
-  'http://127.0.0.1:5501',
-  'http://localhost:5173',   // Vite
-  'https://vintage808-admin.vercel.app',
-  'https://vintage808.co.za',
-  'https://vintage808-sage.vercel.app',
-  'https://www.vintage808.co.za',
-  
-],
+app.options('*', cors({
+  origin: [
+    'http://localhost:5500',
+    'http://127.0.0.1:5500',
+    'http://localhost:5501',
+    'http://127.0.0.1:5501',
+    'http://localhost:5173',
+    'https://vintage808-admin.vercel.app',
+    'https://vintage808.co.za',
+    'https://vintage808-sage.vercel.app',
+    'https://www.vintage808.co.za',
+  ],
   credentials: true,
 }));
 app.use(express.json());
