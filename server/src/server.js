@@ -40,6 +40,7 @@ app.use(cors({
     'https://vintage808.co.za',
     'https://vintage808-sage.vercel.app',
     'https://www.vintage808.co.za',
+    'https://vintage808-admin-tau.vercel.app'
   ],
   credentials: true,
 }));
